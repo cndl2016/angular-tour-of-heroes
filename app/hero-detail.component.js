@@ -20,7 +20,8 @@ var HeroDetailComponent = (function () {
     HeroDetailComponent = __decorate([
         core_1.Component({
             selector: 'my-hero-detail',
-            template: "\n\t<div *ngIf=\"hero\">\n      <h2>{{hero.name}} \u6570\u636E\u4E00\u89C8</h2>\n      <div><label>\u7F16\u53F7: </label>{{hero.id}}</div>\n      <div>\n        <label>\u540D\u79F0: </label>\n        <input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n        <div><label style=\"color:#F6378F\">\u529B\u91CF: </label>{{hero.strength}}</div>\n        <div><label style=\"color:#8BC34A\">\u654F\u6377: </label>{{hero.agility}}</div>\n        <div><label style=\"color:#55B3F3\">\u667A\u529B: </label>{{hero.intelligence}}</div>\n      </div>\n    </div>\n\t",
+            template: "\n\t<div *ngIf=\"hero\" class=\"hero-details\">\n      <h2>{{hero.name}} \u6570\u636E\u4E00\u89C8</h2>\n      <div><label>\u7F16\u53F7: </label>{{hero.id}}</div>\n      <div>\n        <label>\u540D\u79F0: </label>\n        <input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n        <div><label style=\"color:#F6378F\">\u529B\u91CF: </label>{{hero.strength}}</div>\n        <div><label style=\"color:#8BC34A\">\u654F\u6377: </label>{{hero.agility}}</div>\n        <div><label style=\"color:#006C9A\">\u667A\u529B: </label>{{hero.intelligence}}</div>\n      </div>\n    </div>\n\t",
+            styles: ["\n    .hero-details {\n      width: 500px;\n      padding-top: 5px;\n      padding-left: 280px;\n    }\n  "],
         }), 
         __metadata('design:paramtypes', [])
     ], HeroDetailComponent);
