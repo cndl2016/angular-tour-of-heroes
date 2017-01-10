@@ -10,9 +10,9 @@ import { Hero } from './hero';
       <div>
         <label>名称: </label>
         <input [(ngModel)]="hero.name" placeholder="name"/>
-        <div><label style="color:#F6378F">力量: </label>{{hero.strength}}</div>
-        <div><label style="color:#8BC34A">敏捷: </label>{{hero.agility}}</div>
-        <div><label style="color:#006C9A">智力: </label>{{hero.intelligence}}</div>
+        <div><label style="color:#F6378F">力量 : </label>{{hero.strength}}</div>
+        <div><label style="color:#8BC34A">敏捷 : </label>{{hero.agility}}</div>
+        <div><label style="color:#006C9A">智力 : </label>{{hero.intelligence}}</div>
       </div>
     </div>
 	`,

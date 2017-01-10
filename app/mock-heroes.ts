@@ -10,5 +10,5 @@ export const HEROES: Hero[] = [
   { id: 7, name: '食尸鬼', strength: '25', agility: '18', intelligence: '15' },
   { id: 8, name: '育母蜘蛛', strength: '17', agility: '18', intelligence: '18'  },
   { id: 9, name: '美杜莎', strength: '14', agility: '20', intelligence: '19'  },
-  { id: 10, name: '祈求者', strength: '17', agility: '14', intelligence: '16'  }
+  { id: 10, name: '祈求者', strength: '17', agility: '14', intelligence: '16'  },
 ];
