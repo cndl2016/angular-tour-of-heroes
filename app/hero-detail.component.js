@@ -8,22 +8,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+require('rxjs/add/operator/switchMap');
 var core_1 = require('@angular/core');
-var hero_1 = require('./hero');
+var router_1 = require('@angular/router');
+var common_1 = require('@angular/common');
+var hero_service_1 = require('./hero.service');
 var HeroDetailComponent = (function () {
-    function HeroDetailComponent() {
+    function HeroDetailComponent(heroService, route, location) {
+        this.heroService = heroService;
+        this.route = route;
+        this.location = location;
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', hero_1.Hero)
-    ], HeroDetailComponent.prototype, "hero", void 0);
+    HeroDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params
+            .switchMap(function (params) { return _this.heroService.getHero(+params['id']); })
+            .subscribe(function (hero) { return _this.hero = hero; });
+    };
+    HeroDetailComponent.prototype.goBack = function () {
+        this.location.back();
+    };
     HeroDetailComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-hero-detail',
-            template: "\n\t<div *ngIf=\"hero\" class=\"hero-details\">\n      <h2>{{hero.name}} \u6570\u636E\u4E00\u89C8</h2>\n      <div><label>\u7F16\u53F7: </label>{{hero.id}}</div>\n      <div>\n        <label>\u540D\u79F0: </label>\n        <input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n        <div><label style=\"color:#F6378F\">\u529B\u91CF : </label>{{hero.strength}}</div>\n        <div><label style=\"color:#8BC34A\">\u654F\u6377 : </label>{{hero.agility}}</div>\n        <div><label style=\"color:#006C9A\">\u667A\u529B : </label>{{hero.intelligence}}</div>\n      </div>\n    </div>\n\t",
-            styles: ["\n    .hero-details {\n      width: 500px;\n      padding-top: 5px;\n      padding-left: 280px;\n    }\n  "],
+            templateUrl: 'hero-detail.component.html',
+            styleUrls: ['hero-detail.component.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.ActivatedRoute, common_1.Location])
     ], HeroDetailComponent);
     return HeroDetailComponent;
 }());
