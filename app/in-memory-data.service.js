@@ -4,7 +4,7 @@ var InMemoryDataService = (function () {
     }
     InMemoryDataService.prototype.createDb = function () {
         var heroes = [
-            { id: 1, name: '剑圣', strength: '20', agility: '26', intelligence: '14', memo: '描述，可修改' },
+            { id: 1, name: '剑圣', strength: '20', agility: '26', intelligence: '14', memo: '描述' },
             { id: 2, name: '敌法师', strength: '22', agility: '22', intelligence: '15', memo: '描述，可修改' },
             { id: 3, name: '宙斯', strength: '19', agility: '11', intelligence: '20', memo: '描述，可修改' },
             { id: 4, name: '沙王', strength: '22', agility: '19', intelligence: '16', memo: '描述，可修改' },
