@@ -1,6 +1,7 @@
-import { Hero } from './hero';
-
-export const HEROES: Hero[] = [
+import { InMemoryDbService } from 'angular-in-memory-web-api';
+export class InMemoryDataService implements InMemoryDbService {
+  createDb() {
+    let heroes = [
   { id: 1, name: '剑圣', strength: '20', agility: '26', intelligence: '14', memo: '描述，可修改'},
   { id: 2, name: '敌法师', strength: '22', agility: '22', intelligence: '15', memo: '描述，可修改'},
   { id: 3, name: '宙斯', strength: '19', agility: '11', intelligence: '20', memo: '描述，可修改'},
@@ -12,3 +13,6 @@ export const HEROES: Hero[] = [
   { id: 9, name: '美杜莎', strength: '14', agility: '20', intelligence: '19', memo: '描述，可修改'},
   { id: 10, name: '祈求者', strength: '17', agility: '14', intelligence: '16', memo: '描述，可修改'}
 ];
+    return {heroes};
+  }
+}
