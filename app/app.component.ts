@@ -18,5 +18,6 @@ export class AppComponent {
 
   title = "DOTA2 HEROES";
   
+  
 }
 
